@@ -1,0 +1,704 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    background:
+    radial-gradient(
+        circle at top right,
+        #12384c,
+        #03070b 45%
+    );
+
+    color: white;
+
+    font-family:
+    Arial,
+    sans-serif;
+
+    min-height: 100vh;
+}
+
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.15;
+
+    background-image:
+
+    linear-gradient(
+        #27d9ff 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        #27d9ff 1px,
+        transparent 1px
+    );
+
+    background-size: 45px 45px;
+}
+
+
+header {
+
+    height: 75px;
+
+    padding:
+    0 5%;
+
+    display: flex;
+
+    justify-content:
+    space-between;
+
+    align-items:
+    center;
+
+    border-bottom:
+    1px solid #183648;
+
+    background:
+    #03070bdd;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 10;
+}
+
+
+.logo {
+
+    font-size: 22px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+}
+
+
+.logo span {
+
+    color: #20dcff;
+}
+
+
+.online {
+
+    color: #45ff9b;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+main {
+
+    width:
+    min(1200px, 92%);
+
+    margin:
+    auto;
+}
+
+
+.hero {
+
+    min-height:
+    560px;
+
+    display: grid;
+
+    grid-template-columns:
+    1.2fr 0.8fr;
+
+    gap: 30px;
+
+    align-items:
+    center;
+}
+
+
+.tag {
+
+    color:
+    #20dcff;
+
+    font-size:
+    12px;
+
+    letter-spacing:
+    3px;
+
+    margin-bottom:
+    20px;
+}
+
+
+h1 {
+
+    font-size:
+    clamp(42px, 6vw, 76px);
+
+    line-height:
+    0.95;
+
+    margin:
+    0 0 25px;
+}
+
+
+h1 span {
+
+    color:
+    #76b9ca;
+}
+
+
+p {
+
+    color:
+    #8ea7b6;
+
+    line-height:
+    1.7;
+}
+
+
+.buttons {
+
+    display:
+    flex;
+
+    gap:
+    12px;
+
+    margin-top:
+    30px;
+}
+
+
+button {
+
+    padding:
+    14px 22px;
+
+    border:
+    1px solid #20dcff;
+
+    border-radius:
+    6px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #087c98,
+        #102f40
+    );
+
+    color:
+    white;
+
+    font-weight:
+    800;
+
+    cursor:
+    pointer;
+
+    letter-spacing:
+    1px;
+}
+
+
+button:hover {
+
+    box-shadow:
+    0 0 30px #20dcff66;
+}
+
+
+button.secondary {
+
+    background:
+    #09121a;
+
+    border-color:
+    #345568;
+}
+
+
+.scanner {
+
+    height:
+    360px;
+
+    display:
+    grid;
+
+    place-items:
+    center;
+
+    position:
+    relative;
+}
+
+
+.circle {
+
+    position:
+    absolute;
+
+    border:
+    1px solid #20dcff66;
+
+    border-radius:
+    50%;
+
+    aspect-ratio:
+    1;
+}
+
+
+.c1 {
+    width: 290px;
+}
+
+.c2 {
+    width: 210px;
+}
+
+.c3 {
+    width: 130px;
+}
+
+
+.scan {
+
+    position:
+    absolute;
+
+    width:
+    300px;
+
+    height:
+    2px;
+
+    background:
+    #20dcff;
+
+    box-shadow:
+    0 0 30px #20dcff;
+
+    animation:
+    rotate 3s linear infinite;
+}
+
+
+@keyframes rotate {
+
+    from {
+        transform:
+        rotate(0deg);
+    }
+
+    to {
+        transform:
+        rotate(360deg);
+    }
+
+}
+
+
+.center {
+
+    width:
+    90px;
+
+    height:
+    90px;
+
+    border:
+    1px solid #20dcff;
+
+    border-radius:
+    50%;
+
+    display:
+    grid;
+
+    place-items:
+    center;
+
+    font-size:
+    28px;
+
+    font-weight:
+    900;
+
+    box-shadow:
+    0 0 50px #20dcff44;
+}
+
+
+.center small {
+
+    color:
+    #20dcff;
+
+    font-size:
+    9px;
+}
+
+
+.stats {
+
+    display:
+    grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:
+    12px;
+}
+
+
+.stats div {
+
+    padding:
+    20px;
+
+    border:
+    1px solid #183648;
+
+    background:
+    #08111a;
+
+    border-radius:
+    8px;
+}
+
+
+.stats b {
+
+    display:
+    block;
+
+    color:
+    #20dcff;
+
+    font-size:
+    18px;
+}
+
+
+.stats span {
+
+    color:
+    #718b9c;
+
+    font-size:
+    10px;
+
+    letter-spacing:
+    2px;
+}
+
+
+.panel {
+
+    margin:
+    18px 0;
+
+    padding:
+    25px;
+
+    border:
+    1px solid #183648;
+
+    background:
+    linear-gradient(
+        145deg,
+        #0a141e,
+        #060d14
+    );
+
+    border-radius:
+    10px;
+}
+
+
+.panel h2 {
+
+    font-size:
+    15px;
+
+    letter-spacing:
+    2px;
+
+    border-bottom:
+    1px solid #183648;
+
+    padding-bottom:
+    15px;
+}
+
+
+.drop {
+
+    padding:
+    60px 20px;
+
+    text-align:
+    center;
+
+    border:
+    1px dashed #26718a;
+
+    background:
+    #061018;
+
+    border-radius:
+    8px;
+
+    cursor:
+    pointer;
+}
+
+
+.preview {
+
+    display:
+    none;
+
+    max-width:
+    100%;
+
+    max-height:
+    450px;
+
+    margin:
+    20px auto;
+
+    border-radius:
+    8px;
+}
+
+
+.result {
+
+    margin:
+    20px 0;
+
+    padding:
+    20px;
+
+    text-align:
+    center;
+
+    font-size:
+    23px;
+
+    font-weight:
+    900;
+
+    letter-spacing:
+    2px;
+
+    border:
+    1px solid #183648;
+
+    border-radius:
+    8px;
+}
+
+
+.good {
+
+    color:
+    #45ff9b;
+
+    border-color:
+    #45ff9b66;
+}
+
+
+.bad {
+
+    color:
+    #ff416d;
+
+    border-color:
+    #ff416d66;
+}
+
+
+.cameraControls {
+
+    display:
+    flex;
+
+    gap:
+    10px;
+
+    margin-bottom:
+    15px;
+}
+
+
+.cameraControls input {
+
+    flex:
+    1;
+
+    padding:
+    14px;
+
+    background:
+    #03070b;
+
+    color:
+    white;
+
+    border:
+    1px solid #183648;
+
+    border-radius:
+    6px;
+}
+
+
+.camera {
+
+    width:
+    100%;
+
+    min-height:
+    300px;
+
+    object-fit:
+    contain;
+
+    background:
+    #020509;
+
+    border:
+    1px solid #183648;
+
+    border-radius:
+    8px;
+}
+
+
+.training {
+
+    display:
+    grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:
+    15px;
+}
+
+
+.training div {
+
+    padding:
+    20px;
+
+    border:
+    1px solid #183648;
+
+    border-radius:
+    8px;
+}
+
+
+.training h3 {
+
+    color:
+    #20dcff;
+}
+
+
+code {
+
+    color:
+    #45ff9b;
+}
+
+
+.disclaimer {
+
+    border-color:
+    #72521c;
+}
+
+
+.disclaimer h2 {
+
+    color:
+    #ffb84d;
+}
+
+
+@media(max-width:800px) {
+
+    .hero {
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+    .stats {
+
+        grid-template-columns:
+        1fr 1fr;
+
+    }
+
+    .training {
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+    .cameraControls {
+
+        flex-direction:
+        column;
+
+    }
+
+}
+
+
+@media(max-width:500px) {
+
+    .stats {
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+}
