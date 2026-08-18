@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+METALVISION X
+</title>
+
+<link
+rel="stylesheet"
+href="style.css"
+>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+
+METALVISION
+<span>X</span>
+
+</div>
+
+<div
+id="systemStatus"
+class="online"
+>
+
+● CHECKING SYSTEM
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<section class="hero">
+
+<div>
+
+<div class="tag">
+
+AI METAL INSPECTION SYSTEM
+
+</div>
+
+
+<h1>
+
+SEE THE DEFECT
+
+<span>
+BEFORE IT BECOMES A PROBLEM.
+</span>
+
+</h1>
+
+
+<p>
+
+AI-powered visual inspection
+for metal parts using your own
+GOOD and BAD training photographs.
+
+</p>
+
+
+<div class="buttons">
+
+<button
+onclick="openUpload()"
+>
+
+UPLOAD PART
+
+</button>
+
+
+<button
+class="secondary"
+onclick="scrollCamera()"
+>
+
+ESP32-CAM
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="scanner">
+
+<div class="circle c1"></div>
+
+<div class="circle c2"></div>
+
+<div class="circle c3"></div>
+
+<div class="scan"></div>
+
+<div class="center">
+
+AI
+
+<small>
+VISION
+</small>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="stats">
+
+<div>
+
+<b id="modelStatus">
+--
+</b>
+
+<span>
+AI MODEL
+</span>
+
+</div>
+
+
+<div>
+
+<b>
+GOOD / BAD
+</b>
+
+<span>
+CLASSIFICATION
+</span>
+
+</div>
+
+
+<div>
+
+<b>
+ESP32-CAM
+</b>
+
+<span>
+CAMERA SOURCE
+</span>
+
+</div>
+
+
+<div>
+
+<b>
+LOCAL
+</b>
+
+<span>
+PROCESSING
+</span>
+
+</div>
+
+</section>
+
+
+<section class="panel">
+
+<h2>
+01 // INSPECT METAL PART
+</h2>
+
+
+<input
+type="file"
+id="imageInput"
+accept="image/*"
+hidden
+>
+
+
+<div
+id="dropZone"
+class="drop"
+onclick="openUpload()"
+>
+
+<h3>
+
+DROP METAL PART PHOTO
+
+</h3>
+
+<p>
+
+Click to select an image
+
+</p>
+
+</div>
+
+
+<img
+id="preview"
+class="preview"
+>
+
+
+<div
+id="result"
+class="result"
+>
+
+WAITING FOR IMAGE
+
+</div>
+
+
+<button
+id="analyzeButton"
+onclick="analyzeImage()"
+disabled
+>
+
+ANALYZE PART
+
+</button>
+
+</section>
+
+
+<section
+id="cameraSection"
+class="panel"
+>
+
+<h2>
+
+02 // ESP32-CAM
+
+</h2>
+
+
+<div class="cameraControls">
+
+<input
+id="cameraIP"
+placeholder="http://192.168.1.50"
+>
+
+
+<button
+onclick="connectCamera()"
+>
+
+CONNECT
+
+</button>
+
+
+<button
+onclick="captureCamera()"
+>
+
+CAPTURE + ANALYZE
+
+</button>
+
+</div>
+
+
+<img
+id="cameraStream"
+class="camera"
+>
+
+
+</section>
+
+
+<section class="panel">
+
+<h2>
+
+03 // TRAINING DATA
+
+</h2>
+
+
+<div class="training">
+
+<div>
+
+<h3>
+GOOD
+</h3>
+
+<p>
+
+Put normal metal-part
+photos in:
+
+</p>
+
+<code>
+dataset/good/
+</code>
+
+</div>
+
+
+<div>
+
+<h3>
+BAD
+</h3>
+
+<p>
+
+Put defective metal-part
+photos in:
+
+</p>
+
+<code>
+dataset/bad/
+</code>
+
+</div>
+
+</div>
+
+
+<p class="warning">
+
+The model learns visual patterns
+from the photographs you provide.
+
+</p>
+
+</section>
+
+
+<section class="panel disclaimer">
+
+<h2>
+
+IMPORTANT
+
+</h2>
+
+<p>
+
+This system provides a visual AI
+assessment. It cannot detect hidden,
+internal or subsurface defects that
+are not visible in the camera image.
+
+For critical industrial parts,
+use professional inspection methods.
+
+</p>
+
+</section>
+
+
+</main>
+
+
+<script
+src="app.js"
+></script>
+
+
+</body>
+
+</html>
